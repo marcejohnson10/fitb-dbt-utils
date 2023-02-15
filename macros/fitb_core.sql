@@ -8,7 +8,7 @@
 {%- endmacro %}
 
 {% macro set_query_tag() -%}
-  {% set new_query_tag = model.name %} 
+  {% set new_query_tag = this %} 
   {% if new_query_tag %}
     {% set original_query_tag = get_current_query_tag() %}
     {{ log("Setting query_tag to '" ~ new_query_tag ~ "'. Will reset to '" ~ original_query_tag ~ "' after materialization.") }}
